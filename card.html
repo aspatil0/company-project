@@ -1,0 +1,227 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Credit Card</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">Services</a></li>
+      <li><a href="standard.html">Pricing</a></li>
+      <li><a href="contactme.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Credit Card -->
+  <div id="card-section">
+    <div class="credit-card" id="creditCard">
+      <div class="chip"></div>
+      <div class="card-details">
+        <p class="card-number" id="cardNumber">1234 4568 1234 4568</p>
+        <p class="valid-thru">YOUR ID: <span id="expiryDate">0000</span></p>
+        <p class="cardholder-name" id="cardHolderName">NAME SURNAME</p>
+      </div>
+      <div class="card-info">
+        <p class="bank-name">DEVINETECH</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Form -->
+  <div class="edit-form">
+    <h3>Edit Your Card</h3>
+    <form id="cardForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="cardNumberInput">Card Number:</label>
+      <input type="text" id="cardNumberInput" placeholder="1234 4568 1234 4568" maxlength="19" required>
+
+      <label for="expiry">GENREATED ID OF DEVINETECH</label>
+      <input type="text" id="expiry" placeholder="YOUR ID" maxlength="4" required>
+ <br>
+ <br><br>
+      <button type="button" id="updateCard">Update Card</button>
+    </form>
+    
+    <button id="downloadCard">Download Card</button>
+  </div>
+<style>/* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+    }
+    
+    /* Navbar */
+    .navbar {
+      background: #333;
+      padding: 10px;
+      color: #fff;
+    }
+    
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .navbar ul li {
+      margin: 0 15px;
+    }
+    
+    .navbar ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+    
+    .navbar ul li a:hover {
+      color: #f0a500;
+    }
+    
+    /* Credit Card */
+    #card-section {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    
+    .credit-card {
+      width: 350px;
+      height: 200px;
+      border-radius: 15px;
+      background: linear-gradient(45deg, #e040fb, #880e4f);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+      color: #fff;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Chip */
+    .chip {
+      width: 50px;
+      height: 35px;
+      border-radius: 5px;
+      background: linear-gradient(45deg, #ffcc80, #ffa726);
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    
+    /* Card Details */
+    .card-details {
+      position: absolute;
+      bottom: 50px;
+      left: 20px;
+    }
+    
+    .card-number {
+      font-size: 20px;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+    
+    .valid-thru {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    
+    .valid-thru span {
+      font-weight: bold;
+    }
+    
+    .cardholder-name {
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    /* Card Info */
+    .card-info {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    
+    .bank-name {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: right;
+      text-transform: uppercase;
+    }
+    
+    /* Edit Form */
+    .edit-form {
+      margin: 20px auto;
+      text-align: center;
+    }
+    
+    .edit-form form {
+      display: inline-block;
+      text-align: left;
+    }
+    
+    edit-form label {
+      font-weight: bold;
+      display: block;
+      margin: 10px 0 5px;
+    }
+    
+    edit-form input {
+      padding: 8px;
+      width: 250px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    
+    .edit-form button {
+      padding: 10px 20px;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .edit-form button:hover {
+      background: #555;
+    }
+    </style>
+
+  <script>
+  document.getElementById("updateCard").addEventListener("click", function () {
+    const cardNumber = document.getElementById("cardNumberInput").value;
+    const expiry = document.getElementById("expiry").value;
+  
+    document.getElementById("cardHolderName").innerText = name || "NAME SURNAME";
+    document.getElementById("expiryDate").innerText = expiry || "00/00";
+  });
+
+  
+  document.getElementById("downloadCard").addEventListener("click", function () {
+    const cardElement = document.getElementById("creditCard");
+  
+    html2canvas(cardElement).then((canvas) => {
+      const link = document.createElement("a");
+      link.download = "DevineTech Card.png";
+      link.href = canvas.toDataURL();
+      link.click();
+    });
+  });
+  </script>
+
+</body>
+</html> -->

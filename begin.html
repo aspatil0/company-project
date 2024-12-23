@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevineTech</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="dropdown">
+                <a href="#">Home</a>
+                <div class="dropdown-content">
+                    <a href="#home-section">Main Page</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">About</a>
+                <div class="dropdown-content">
+                    <a href="#about">Company Overview</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Services</a>
+                <div class="dropdown-content">
+                    <a href="#web-dev">Web Development</a>
+                    <a href="#uiux">UI/UX Design</a>
+                    <a href="#iot">IoT Solutions</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Internship/Jobs</a>
+                <div class="dropdown-content">
+                    <a href="#internship">View Internships</a>
+                    <a href="#jobs">Job Openings</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Contact Us</a>
+                <div class="dropdown-content">
+                    <a href="#email">Email Us</a>
+                    <a href="#social">Social Media</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Slogan Section -->
+    <div class="slogan-section">
+        <h1>Your Vision, Our Innovation</h1>
+        <button class="cta-button">Click Here for More</button>
+    </div>
+
+    <!-- Center Details Block -->
+    <div class="details-section">
+        <h2>Welcome to DevineTech</h2>
+        <p>
+            DevineTech is a tech services company offering innovative solutions in web development, UI/UX design, IoT projects, and more.
+            Our mission is to empower businesses and individuals with cutting-edge technology and creative solutions.
+        </p>
+    </div>
+
+    <!-- Scrolling Images -->
+    <div class="scroll-images">
+        <div class="image-container">
+            <img src="image1.jpg" alt="Project 1">
+            <img src="image2.jpg" alt="Project 2">
+            <img src="image3.jpg" alt="Project 3">
+            <img src="image4.jpg" alt="Project 4">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Follow Us:</p>
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">Instagram</a>
+        </div>
+        <div class="footer-content">
+            <p>Contact Us: <span class="highlight">contact@devinetech.com</span></p>
+        </div>
+        <div class="footer-content">
+            <p>&copy; 2024 DevineTech. All rights reserved.</p>
+        </div>
+    </footer>
+    <style>/* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: #ff0000;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        .nav-list li {
+            position: relative;
+        }
+        
+        .nav-list a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            display: block;
+            font-weight: bold;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #222;
+            min-width: 150px;
+            z-index: 100;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #ff0000;
+        }
+        
+        /* Slogan Section */
+        .slogan-section {
+            text-align: center;
+            margin: 50px 20px;
+        }
+        
+        .slogan-section h1 {
+            font-size: 3em;
+            color: #ffcc00;
+        }
+        
+        .cta-button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background-color: #ffcc00;
+            color: #000;
+        }
+        
+        /* Center Details Section */
+        .details-section {
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            max-width: 800px;
+            background-color: #111;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+        }
+        
+        .details-section h2 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+        
+        /* Scrolling Images */
+        .scroll-images {
+            margin: 50px auto;
+            overflow: hidden;
+            background-color: #111;
+            padding: 20px;
+            border: 2px solid #ff0000;
+        }
+        
+        .image-container {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+        
+        .image-container img {
+            width: 200px;
+            height: 150px;
+            margin: 0 10px;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid #ff0000;
+        }
+        
+        .footer .highlight {
+            color: #ffcc00;
+        }
+        
+        .footer .social-link {
+            color: #ff0000;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .footer .social-link:hover {
+            text-decoration: underline;
+        }
+        </style>
+</body>
+</html>
